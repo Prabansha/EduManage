@@ -23,14 +23,14 @@ public class LoginFormController {
     public void forgotPasswordOnActoin(ActionEvent actionEvent) {
     }
 
-    public void loginOnAction(ActionEvent actionEvent) {
+    public void loginOnAction(ActionEvent actionEvent) throws IOException {
         String email = txtEmail.getText().toLowerCase();
         String password = txtPassword.getText().trim();
 //        find the user => (1000)
         Optional<User> selectedUser = Database.userTable.stream().filter(e -> e.getEmail().equals(email)).findFirst();
         if (selectedUser.isPresent()) {
             if (new PasswordManager().checkPassword(password,selectedUser.get().getPassword())) {
-                System.out.println(selectedUser.get().toString());
+                setUi("DashboardForm");
             }else{
                 new Alert(Alert.AlertType.ERROR, "Invalid Password").show();
             }

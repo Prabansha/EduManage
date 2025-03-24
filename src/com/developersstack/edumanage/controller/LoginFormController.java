@@ -19,10 +19,13 @@ public class LoginFormController {
     }
 
     public void loginOnAction(ActionEvent actionEvent) {
+        String email = txtEmail.getText().toLowerCase();
+        String password = txtPassword.getText().trim();
+//        find the user => (1000)
     }
 
-    public void createAnAccountOnAction(ActionEvent actionEvent) {
-
+    public void createAnAccountOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("SignupForm");
     }
 
     private void setUi(String location) throws IOException {

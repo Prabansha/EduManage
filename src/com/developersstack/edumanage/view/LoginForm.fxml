@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="496.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developersstack.edumanage.controller.LoginFormController">
+<AnchorPane fx:id="context" prefHeight="496.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developersstack.edumanage.controller.LoginFormController">
    <children>
       <Label layoutX="24.0" layoutY="27.0" text="Login" textFill="#3211d7">
          <font>
@@ -20,10 +19,10 @@
          </font>
       </Label>
       <Separator layoutX="14.0" layoutY="65.0" prefHeight="12.0" prefWidth="477.0" />
-      <TextField layoutX="24.0" layoutY="102.0" prefHeight="42.0" prefWidth="466.0" promptText="email" />
-      <PasswordField layoutX="24.0" layoutY="169.0" prefHeight="42.0" prefWidth="466.0" promptText="Password" />
-      <Hyperlink layoutX="387.0" layoutY="224.0" prefHeight="24.0" prefWidth="102.0" text="Froget password?" underline="true" />
-      <Button layoutX="24.0" layoutY="255.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="466.0" style="-fx-background-color: #0D99FF;" text="Login" textFill="WHITE">
+      <TextField fx:id="txtEmail" layoutX="24.0" layoutY="102.0" prefHeight="42.0" prefWidth="466.0" promptText="email" />
+      <PasswordField fx:id="txtPassword" layoutX="24.0" layoutY="169.0" prefHeight="42.0" prefWidth="466.0" promptText="Password" />
+      <Hyperlink layoutX="387.0" layoutY="224.0" onAction="#forgotPasswordOnActoin" prefHeight="24.0" prefWidth="102.0" text="Froget password?" underline="true" />
+      <Button layoutX="24.0" layoutY="255.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="42.0" prefWidth="466.0" style="-fx-background-color: #0D99FF;" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -33,7 +32,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="23.0" layoutY="361.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="466.0" style="-fx-background-color: #1A2238;" text="Create an account" textFill="WHITE">
+      <Button layoutX="23.0" layoutY="361.0" mnemonicParsing="false" onAction="#createAnAccountOnAction" prefHeight="42.0" prefWidth="466.0" style="-fx-background-color: #1A2238;" text="Create an account" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

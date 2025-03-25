@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="496.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developersstack.edumanage.controller.StudentFormController">
+<AnchorPane fx:id="context" prefHeight="496.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developersstack.edumanage.controller.StudentFormController">
    <children>
       <Label layoutX="34.0" layoutY="37.0" text="Student Management" textFill="#3211d7">
          <font>
@@ -20,7 +19,7 @@
          </font>
       </Label>
       <Separator layoutX="24.0" layoutY="75.0" prefHeight="12.0" prefWidth="811.0" />
-      <Button layoutX="716.0" layoutY="32.0" mnemonicParsing="false" onAction="#createAnAccountOnAction" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #1A2238;" text="Back to home" textFill="WHITE">
+      <Button layoutX="716.0" layoutY="32.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #1A2238;" text="Back to home" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -28,7 +27,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <Button layoutX="585.0" layoutY="32.0" mnemonicParsing="false" onAction="#createAnAccountOnAction" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #0D99FF;" text="+ New Student" textFill="WHITE">
+      <Button layoutX="585.0" layoutY="32.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #0D99FF;" text="+ New Student" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -36,28 +35,28 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <TextField layoutX="34.0" layoutY="102.0" prefHeight="36.0" prefWidth="182.0" promptText="Student Id">
+      <TextField fx:id="txtId" editable="false" layoutX="34.0" layoutY="102.0" prefHeight="36.0" prefWidth="182.0" promptText="Student Id">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField layoutX="226.0" layoutY="102.0" prefHeight="36.0" prefWidth="182.0" promptText="Full Name">
+      <TextField fx:id="txtName" layoutX="226.0" layoutY="102.0" prefHeight="36.0" prefWidth="182.0" promptText="Full Name">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <TextField layoutX="607.0" layoutY="102.0" prefHeight="36.0" prefWidth="239.0" promptText="Address">
+      <TextField fx:id="txtAddress" layoutX="607.0" layoutY="102.0" prefHeight="36.0" prefWidth="239.0" promptText="Address">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <DatePicker layoutX="416.0" layoutY="102.0" prefHeight="36.0" prefWidth="182.0" promptText="Date of Birth" />
+      <DatePicker fx:id="txtDob" layoutX="416.0" layoutY="102.0" prefHeight="36.0" prefWidth="182.0" promptText="Date of Birth" />
       <TextField layoutX="34.0" layoutY="157.0" prefHeight="36.0" prefWidth="638.0" promptText="search here">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <Button layoutX="680.0" layoutY="157.0" mnemonicParsing="false" onAction="#createAnAccountOnAction" prefHeight="36.0" prefWidth="166.0" style="-fx-background-color: #0D99FF;" text="Save Student" textFill="WHITE">
+      <Button layoutX="680.0" layoutY="157.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="36.0" prefWidth="166.0" style="-fx-background-color: #0D99FF;" text="Save Student" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -65,13 +64,13 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Button>
-      <TableView layoutX="34.0" layoutY="200.0" prefHeight="285.0" prefWidth="811.0">
+      <TableView fx:id="tblStudent" layoutX="34.0" layoutY="200.0" prefHeight="285.0" prefWidth="811.0">
         <columns>
-          <TableColumn prefWidth="89.60004043579102" text="# ID" />
-          <TableColumn prefWidth="153.59996032714844" text="Full Nmae" />
-            <TableColumn prefWidth="164.79998779296875" text="DOB" />
-            <TableColumn prefWidth="187.2000732421875" text="Address" />
-            <TableColumn prefWidth="216.7999267578125" text="Options" />
+          <TableColumn fx:id="colId" prefWidth="89.60004043579102" text="# ID" />
+          <TableColumn fx:id="colName" prefWidth="153.59996032714844" text="Full Nmae" />
+            <TableColumn fx:id="colDob" prefWidth="164.79998779296875" text="DOB" />
+            <TableColumn fx:id="colAddress" prefWidth="187.2000732421875" text="Address" />
+            <TableColumn fx:id="colOption" prefWidth="216.7999267578125" text="Options" />
         </columns>
       </TableView>
    </children>
